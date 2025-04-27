@@ -1,5 +1,6 @@
 // Task 1: Set up API and App Structure
 
+
 import { useState, useEffect } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
@@ -76,3 +77,20 @@ function App() {
 }
 
 export default App;
+
+// Task 4: Conditional Rendering
+
+// The Gallery component to display the tours
+function Gallery({ tours }) {
+  return (
+    <div className="gallery">
+      {tours.map((tour) => (
+        <div key={tour.id} className="tour-card">
+          <h3>{tour.name}</h3>
+          <p>{tour.info}</p>
+          <p>Price: ${tour.price}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
